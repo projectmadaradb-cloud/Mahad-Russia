@@ -29,7 +29,7 @@ export default function CookieConsent() {
     <div
       role="dialog"
       aria-label="Уведомление об использовании данных"
-      className="fixed bottom-0 left-0 right-0 z-50 border-t border-white/10 bg-[#0f0f0f]/95 backdrop-blur-sm"
+      className="fixed bottom-0 left-0 right-0 z-50 border-t border-white/10 bg-[#0f0f0f]/95 pb-[env(safe-area-inset-bottom,0px)] backdrop-blur-sm"
     >
       <div className="mx-auto flex w-full max-w-7xl flex-col gap-4 px-6 py-4 sm:flex-row sm:items-center sm:justify-between">
         <p className="text-sm text-gray-300 sm:max-w-2xl">
@@ -49,8 +49,7 @@ export default function CookieConsent() {
           </button>
           <button
             onClick={accept}
-            className="rounded-lg px-5 py-2 text-sm font-bold text-white transition hover:brightness-110"
-            style={{ background: "var(--gold)", color: "#111" }}
+            className="rounded-lg bg-[color:var(--gold)] px-5 py-2 text-sm font-bold text-[#111] transition hover:brightness-110"
           >
             Принять
           </button>

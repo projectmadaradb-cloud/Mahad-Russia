@@ -17,8 +17,7 @@ export default function FloatingTelegramButton() {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Написать нам в Telegram"
-      className="fixed bottom-6 right-6 z-40 flex h-14 w-14 items-center justify-center rounded-full shadow-lg transition hover:scale-110 active:scale-95"
-      style={{ background: "#0088cc" }}
+      className="fixed bottom-[calc(env(safe-area-inset-bottom,0px)+16px)] right-[calc(env(safe-area-inset-right,0px)+16px)] z-40 flex h-14 w-14 items-center justify-center rounded-full bg-[#0088cc] shadow-lg transition hover:scale-110 active:scale-95"
       title="Написать нам в Telegram"
     >
       <svg className="h-7 w-7 text-white" viewBox="0 0 24 24" fill="currentColor">

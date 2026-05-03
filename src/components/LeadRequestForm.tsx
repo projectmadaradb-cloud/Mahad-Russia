@@ -55,13 +55,13 @@ export default function LeadRequestForm() {
   }
 
   return (
-    <div className="metric-card p-7">
+    <div className="metric-card overflow-hidden p-4 sm:p-6 md:p-7">
       <h2 className="text-2xl font-black text-gray-900">Оставить заявку</h2>
       <p className="mt-2 text-sm text-gray-500">
         Заполните форму для расчета кадровой волны под ваш объект. Мы вернемся с первичным планом мобилизации и сроками.
       </p>
 
-      <form className="mt-6 grid gap-4 md:grid-cols-2" onSubmit={onSubmit}>
+      <form className="mt-6 grid gap-4 [overflow-wrap:anywhere] md:grid-cols-2" onSubmit={onSubmit}>
         <label className="block text-sm font-semibold text-gray-700">
           Компания *
           <input
@@ -162,15 +162,18 @@ export default function LeadRequestForm() {
           <span>Подтверждаю согласие на обработку корпоративных контактных данных.</span>
         </label>
 
-        <div className="md:col-span-2 flex flex-wrap items-center gap-3">
+        <div className="md:col-span-2 flex flex-col items-stretch gap-3 sm:flex-row sm:flex-wrap sm:items-center">
           <button
             type="submit"
             disabled={submitState === "submitting"}
-            className="cta-gold disabled:cursor-not-allowed disabled:opacity-70"
+            className="cta-gold w-full px-5 py-2.5 text-center text-base font-bold disabled:cursor-not-allowed disabled:opacity-70 sm:w-auto sm:text-sm"
           >
             {submitState === "submitting" ? "Отправка..." : "Отправить заявку"}
           </button>
-          <a href="mailto:corporate@mahadmanpowers.ru" className="cta-black">
+          <a
+            href="mailto:corporate@mahadmanpowers.ru"
+            className="cta-black w-full px-5 py-2.5 text-center text-base font-bold [overflow-wrap:anywhere] sm:w-auto sm:text-sm"
+          >
             Написать на корпоративную почту
           </a>
         </div>

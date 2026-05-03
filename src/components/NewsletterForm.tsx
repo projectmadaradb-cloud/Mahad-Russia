@@ -8,8 +8,15 @@ export default function NewsletterForm() {
   const [state, setState] = useState<State>("idle");
   const [msg, setMsg] = useState("");
 
+  function dismissKeyboard() {
+    if (document.activeElement instanceof HTMLElement) {
+      document.activeElement.blur();
+    }
+  }
+
   async function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    dismissKeyboard();
     setState("submitting");
     const email = String(new FormData(e.currentTarget).get("email") ?? "").trim();
 
@@ -43,16 +50,21 @@ export default function NewsletterForm() {
           <input
             name="email"
             type="email"
+            inputMode="email"
+            autoComplete="email"
+            autoCapitalize="none"
+            autoCorrect="off"
+            spellCheck={false}
+            enterKeyHint="send"
             required
             placeholder="ваш@email.ru"
             disabled={state === "submitting" || state === "success"}
-            className="w-full rounded-lg border border-white/20 bg-white/10 px-3 py-2 text-sm text-white placeholder-gray-500 outline-none transition focus:border-white/40 disabled:opacity-50 sm:w-48"
+            className="w-full rounded-lg border border-white/20 bg-white/10 px-3 py-2 text-base text-white placeholder-gray-500 outline-none transition focus:border-white/40 disabled:opacity-50 sm:w-48 sm:text-sm"
           />
           <button
             type="submit"
             disabled={state === "submitting" || state === "success"}
-            className="w-full rounded-lg px-4 py-2 text-sm font-bold transition hover:brightness-110 disabled:opacity-50 sm:w-auto"
-            style={{ background: "var(--gold)", color: "#111" }}
+            className="w-full rounded-lg bg-[color:var(--gold)] px-4 py-2 text-sm font-bold text-[#111] transition hover:brightness-110 disabled:opacity-50 sm:w-auto"
           >
             {state === "submitting" ? "..." : state === "success" ? "✓" : "Подписаться"}
           </button>
