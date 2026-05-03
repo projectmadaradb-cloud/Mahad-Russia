@@ -94,7 +94,7 @@ export async function POST(request: Request) {
     host: "smtp.zoho.in",
     port: 465,
     secure: true,
-    rejectUnauthorized: false,
+    tls: { rejectUnauthorized: false },
     auth: { user: smtpUser, pass: smtpPass },
   });
 
