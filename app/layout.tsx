@@ -38,6 +38,7 @@ export default function RootLayout({
     <html lang="ru">
       <head>
         <meta name="yandex-verification" content={yandexVerification} />
+        <meta name="google-site-verification" content="p68PffHFYABmG12SuubVEc7E_JL9ZgCkYH21lc0C3qE" />
         <script
           defer
           src="https://cloud.umami.is/script.js"
