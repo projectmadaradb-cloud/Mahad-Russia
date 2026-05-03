@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import CookieConsent from "@/src/components/CookieConsent";
 import FloatingTelegramButton from "@/src/components/FloatingTelegramButton";
+import MobileNav from "@/src/components/MobileNav";
 import NewsletterForm from "@/src/components/NewsletterForm";
 import "./globals.css";
 
@@ -45,22 +46,23 @@ export default function RootLayout({
           data-website-id="81d33919-dfe5-4bc6-8a53-02789487e8eb"
         />
       </head>
-      <body className="flex min-h-screen flex-col">
+      <body className="flex min-h-screen flex-col overflow-x-hidden">
         {/* Header — full viewport width, white */}
-        <header className="w-full border-b border-gray-200 bg-white">
-          <div className="mx-auto flex h-[110px] w-full max-w-7xl items-center justify-between px-6">
+        <header className="relative w-full border-b border-gray-200 bg-white">
+          <div className="mx-auto flex h-[70px] w-full max-w-7xl items-center justify-between px-4 md:h-[110px] md:px-6">
             <Link href="/" className="flex shrink-0 items-center gap-2">
               <Image
                 src="/logo.avif"
                 alt="Mahad Manpower"
-                width={240}
-                height={96}
-                className="h-[96px] w-auto object-contain"
+                width={180}
+                height={72}
+                className="h-[56px] w-auto object-contain md:h-[96px]"
                 priority
               />
               <span className="rounded bg-gray-900 px-2 py-0.5 text-[11px] font-bold uppercase tracking-widest text-white">RU</span>
             </Link>
-            <nav className="flex items-center gap-1 text-[15px] font-medium text-gray-700">
+            {/* Desktop nav */}
+            <nav className="hidden items-center gap-1 text-[15px] font-medium text-gray-700 md:flex">
               <Link href="/o-nas" className="rounded-md px-3 py-2 hover:bg-gray-100">О нас</Link>
               <Link href="/komplaens" className="rounded-md px-3 py-2 hover:bg-gray-100">Легальность и визы</Link>
               <Link href="/uslugi/stroitelstvo" className="rounded-md px-3 py-2 hover:bg-gray-100">Строительство</Link>
@@ -68,18 +70,20 @@ export default function RootLayout({
               <a href="/uslugi/stroitelstvo" className="nav-cta ml-4 px-5 py-2 text-[15px] font-bold">Нанять рабочих</a>
               <a href="/komplaens" className="cta-gold ml-2 px-5 py-2 text-[15px] font-bold">Оставить заявку</a>
             </nav>
+            {/* Mobile hamburger */}
+            <MobileNav />
           </div>
         </header>
 
         {/* Page content */}
-        <main className="mx-auto w-full max-w-7xl flex-1 px-6 py-8">{children}</main>
+        <main className="mx-auto w-full max-w-7xl flex-1 px-4 py-6 md:px-6 md:py-8">{children}</main>
 
         {/* Footer — dark theme matching mahadmanpowers.co.in */}
         <footer className="w-full bg-[#0a0a0a] text-gray-300">
 
           {/* Main footer columns */}
-          <div className="mx-auto w-full max-w-7xl px-6 py-12">
-            <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
+          <div className="mx-auto w-full max-w-7xl px-4 py-10 md:px-6 md:py-12">
+            <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-4">
               <div>
                 <p className="mb-4 text-xs font-bold uppercase tracking-widest text-gray-500">Услуги</p>
                 <ul className="space-y-2 text-sm">
@@ -125,7 +129,7 @@ export default function RootLayout({
           <NewsletterForm />
 
           {/* Social icons row */}
-          <div className="mx-auto w-full max-w-7xl px-6 pb-8">
+          <div className="mx-auto w-full max-w-7xl px-4 pb-6 md:px-6 md:pb-8">
             <div className="flex items-center gap-3">
               <span className="mr-1 text-xs font-bold uppercase tracking-widest text-gray-500">Мы в сети</span>
 
@@ -186,7 +190,7 @@ export default function RootLayout({
           <div className="border-t border-white/10" />
 
           {/* Bottom bar */}
-          <div className="mx-auto w-full max-w-7xl px-6 py-5">
+          <div className="mx-auto w-full max-w-7xl px-4 py-4 md:px-6 md:py-5">
             <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
               <div className="flex items-center gap-2">
                 <span className="text-base font-black" style={{ color: "var(--gold)" }}>MAHAD</span>
