@@ -31,7 +31,7 @@ export default function NewsletterForm() {
   }
 
   return (
-    <div className="mx-auto w-full max-w-7xl px-6 pb-10">
+    <div className="mx-auto w-full max-w-7xl px-4 pb-10 md:px-6">
       <div className="rounded-2xl border border-white/10 bg-white/5 px-6 py-6 sm:flex sm:items-center sm:gap-8">
         <div className="sm:flex-1">
           <p className="text-xs font-bold uppercase tracking-widest text-gray-500">Рассылка</p>
@@ -39,19 +39,19 @@ export default function NewsletterForm() {
             Получайте обновления о кадровом рынке России и новостях Mahad
           </p>
         </div>
-        <form className="mt-4 flex gap-2 sm:mt-0 sm:shrink-0" onSubmit={onSubmit}>
+        <form className="mt-4 flex flex-col gap-2 sm:mt-0 sm:shrink-0 sm:flex-row" onSubmit={onSubmit}>
           <input
             name="email"
             type="email"
             required
             placeholder="ваш@email.ru"
             disabled={state === "submitting" || state === "success"}
-            className="w-48 rounded-lg border border-white/20 bg-white/10 px-3 py-2 text-sm text-white placeholder-gray-500 outline-none transition focus:border-white/40 disabled:opacity-50"
+            className="w-full rounded-lg border border-white/20 bg-white/10 px-3 py-2 text-sm text-white placeholder-gray-500 outline-none transition focus:border-white/40 disabled:opacity-50 sm:w-48"
           />
           <button
             type="submit"
             disabled={state === "submitting" || state === "success"}
-            className="rounded-lg px-4 py-2 text-sm font-bold transition hover:brightness-110 disabled:opacity-50"
+            className="w-full rounded-lg px-4 py-2 text-sm font-bold transition hover:brightness-110 disabled:opacity-50 sm:w-auto"
             style={{ background: "var(--gold)", color: "#111" }}
           >
             {state === "submitting" ? "..." : state === "success" ? "✓" : "Подписаться"}
