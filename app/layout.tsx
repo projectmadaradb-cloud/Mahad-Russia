@@ -98,9 +98,10 @@ export default function RootLayout({
                 <ul className="space-y-2 text-sm">
                   <li><Link href="/o-nas" className="hover:text-white">О нас</Link></li>
                   <li><Link href="/komplaens" className="hover:text-white">Легальность и визы</Link></li>
-                  <li><Link href="/o-nas" className="hover:text-white">Наша команда</Link></li>
-                  <li><Link href="/o-nas" className="hover:text-white">Партнёрство</Link></li>
-                  <li><a href="https://mahadmanpowers.co.in" target="_blank" rel="noopener noreferrer" className="hover:text-white" style={{ color: "var(--gold)" }}>Главный сайт →</a></li>
+                  <li><Link href="/legal" className="hover:text-white">Правовая информация</Link></li>
+                  <li><Link href="/privacy-policy" className="hover:text-white">Политика конфиденциальности</Link></li>
+                  <li><Link href="/terms-and-conditions" className="hover:text-white">Условия использования</Link></li>
+                  <li><a href="https://mahadmanpowers.co.in" target="_blank" rel="noopener noreferrer" className="text-[color:var(--gold)] hover:text-white">Главный сайт →</a></li>
                 </ul>
               </div>
               <div>
@@ -166,7 +167,7 @@ export default function RootLayout({
                 aria-label="Позвонить"
                 className="flex h-9 w-9 items-center justify-center rounded-full bg-white/5 transition hover:bg-yellow-400/20"
               >
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5" style={{ color: "var(--gold)" }}>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5 text-[color:var(--gold)]">
                   <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6.13 6.13l.96-.96a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
                 </svg>
               </a>
@@ -193,13 +194,19 @@ export default function RootLayout({
           <div className="mx-auto w-full max-w-7xl px-4 py-4 md:px-6 md:py-5">
             <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
               <div className="flex items-center gap-2">
-                <span className="text-base font-black" style={{ color: "var(--gold)" }}>MAHAD</span>
+                <span className="text-base font-black text-[color:var(--gold)]">MAHAD</span>
                 <span className="text-base font-black text-white">MANPOWER</span>
                 <span className="ml-1 rounded bg-white/10 px-2 py-0.5 text-[10px] font-bold uppercase tracking-widest text-white">RUSSIA</span>
               </div>
               <p className="text-xs text-gray-600">
                 © 2026 Mahad Manpower. Все права защищены. Лицензированный B2B-оператор.{" "}
                 <a href="https://mahadmanpowers.co.in" target="_blank" rel="noopener noreferrer" className="underline hover:text-gray-400">mahadmanpowers.co.in</a>
+              </p>
+              <p className="text-xs text-gray-600">
+                <Link href="/privacy-policy" className="hover:text-gray-400">Политика конфиденциальности</Link>{" "}
+                · <Link href="/terms-and-conditions" className="hover:text-gray-400">Условия использования</Link>{" "}
+                · <Link href="/cookie-policy" className="hover:text-gray-400">Файлы cookie</Link>{" "}
+                · <Link href="/disclaimer" className="hover:text-gray-400">Отказ от ответственности</Link>
               </p>
               <p className="mt-1 max-w-3xl text-[10px] leading-relaxed text-gray-600">
                 Mahad Employment Services (UDYAM-UP-50-0250161) · Партнёр по рекрутингу: TAJ HR SERVICES, лицензия B-3252/DEL/PER/1000+/5/11251/2025, действует до 2030.
