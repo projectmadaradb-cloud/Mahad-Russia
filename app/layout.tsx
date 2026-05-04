@@ -65,6 +65,7 @@ export default function RootLayout({
             <nav className="hidden items-center gap-1 text-[15px] font-medium text-gray-700 md:flex">
               <Link href="/o-nas" className="rounded-md px-3 py-2 hover:bg-gray-100">О нас</Link>
               <Link href="/komplaens" className="rounded-md px-3 py-2 hover:bg-gray-100">Легальность и визы</Link>
+              <Link href="/rabotodatelyam" className="rounded-md px-3 py-2 hover:bg-gray-100">Работодателям</Link>
               <Link href="/uslugi/stroitelstvo" className="rounded-md px-3 py-2 hover:bg-gray-100">Строительство</Link>
               <Link href="/uslugi/logistika" className="rounded-md px-3 py-2 hover:bg-gray-100">Логистика</Link>
               <a href="/uslugi/stroitelstvo" className="nav-cta ml-4 px-5 py-2 text-[15px] font-bold">Нанять рабочих</a>
@@ -107,10 +108,10 @@ export default function RootLayout({
               <div>
                 <p className="mb-4 text-xs font-bold uppercase tracking-widest text-gray-500">Работодателям</p>
                 <ul className="space-y-2 text-sm">
-                  <li><Link href="/uslugi/stroitelstvo" style={{ color: "var(--gold)" }} className="hover:brightness-125">Нанять рабочих →</Link></li>
-                  <li><Link href="/komplaens" className="hover:text-white">Оставить заявку</Link></li>
-                  <li><Link href="/komplaens" className="hover:text-white">GCC-опыт</Link></li>
-                  <li><Link href="/komplaens" className="hover:text-white">EOR-синхронизация</Link></li>
+                  <li><Link href="/rabotodatelyam/autstaffing-stroiteley-ceny" className="text-[color:var(--gold)] hover:brightness-125">Аутстаффинг строителей: цены</Link></li>
+                  <li><Link href="/rabotodatelyam/nanyat-brigadu-svarshchikov" className="hover:text-white">Найм бригад сварщиков</Link></li>
+                  <li><Link href="/rabotodatelyam/alternativa-migrantam-sng" className="hover:text-white">Альтернатива дефициту СНГ</Link></li>
+                  <li><Link href="/komplaens" className="hover:text-white">EOR и комплаенс</Link></li>
                 </ul>
               </div>
               <div>

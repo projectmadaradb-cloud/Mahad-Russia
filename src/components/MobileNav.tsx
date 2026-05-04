@@ -30,6 +30,7 @@ export default function MobileNav() {
           <nav className="flex flex-col px-4 py-3">
             <Link href="/o-nas" onClick={() => setOpen(false)} className="rounded-md px-3 py-3 text-[15px] font-medium text-gray-700 hover:bg-gray-100">О нас</Link>
             <Link href="/komplaens" onClick={() => setOpen(false)} className="rounded-md px-3 py-3 text-[15px] font-medium text-gray-700 hover:bg-gray-100">Легальность и визы</Link>
+            <Link href="/rabotodatelyam" onClick={() => setOpen(false)} className="rounded-md px-3 py-3 text-[15px] font-medium text-gray-700 hover:bg-gray-100">Работодателям</Link>
             <Link href="/uslugi/stroitelstvo" onClick={() => setOpen(false)} className="rounded-md px-3 py-3 text-[15px] font-medium text-gray-700 hover:bg-gray-100">Строительство</Link>
             <Link href="/uslugi/logistika" onClick={() => setOpen(false)} className="rounded-md px-3 py-3 text-[15px] font-medium text-gray-700 hover:bg-gray-100">Логистика</Link>
             <div className="mt-2 flex flex-col gap-2 pb-2">
