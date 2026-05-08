@@ -38,6 +38,30 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "daily",
       priority: 0.95,
     },
+    {
+      url: `${siteUrl}/rabotodatelyam`,
+      lastModified,
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
+      url: `${siteUrl}/rabotodatelyam/autstaffing-stroiteley-ceny`,
+      lastModified,
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
+      url: `${siteUrl}/rabotodatelyam/nanyat-brigadu-svarshchikov`,
+      lastModified,
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
+      url: `${siteUrl}/rabotodatelyam/alternativa-migrantam-sng`,
+      lastModified,
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
   ];
 
   // Dynamic routes (Phase 1: 50 pages)

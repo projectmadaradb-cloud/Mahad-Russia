@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import TrustBadges from "@/src/components/TrustBadges";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://mahadmanpowers.ru";
 
@@ -148,6 +149,62 @@ export default function ConstructionServicePage() {
       </div>
 
 
+      {/* ── B2B Enterprise keywords section ── */}
+      <div className="space-y-6">
+        <div>
+          <h2 className="text-2xl font-black text-gray-900">Аутстаффинг индийского персонала для стройки</h2>
+          <p className="mt-3 text-gray-700 leading-relaxed">
+            Мы поставляем не отдельных специалистов, а готовые производственные бригады под ваш календарно-сетевой график. Весь персонал трудоустраивается через аккредитованных российских EOR-партнёров — заказчик получает кадровый ресурс без юридической нагрузки по иностранным трудовым договорам.
+          </p>
+        </div>
+
+        <div>
+          <h2 className="text-2xl font-black text-gray-900">Стоимость массового найма рабочих из Индии</h2>
+          <p className="mt-2 mb-4 text-sm text-gray-500">Ориентировочные сроки вывода для EPC-контракторов. Точные цифры — по запросу.</p>
+          <div className="overflow-x-auto">
+            <table className="w-full border-collapse text-sm">
+              <thead>
+                <tr className="bg-gray-100">
+                  <th className="py-2 px-3 text-left text-xs font-bold uppercase tracking-widest text-gray-500">Батч</th>
+                  <th className="py-2 px-3 text-left text-xs font-bold uppercase tracking-widest text-gray-500">Срок вывода</th>
+                  <th className="py-2 px-3 text-left text-xs font-bold uppercase tracking-widest text-gray-500">Модель</th>
+                  <th className="py-2 px-3 text-left text-xs font-bold uppercase tracking-widest text-gray-500">Статус</th>
+                </tr>
+              </thead>
+              <tbody>
+                {([
+                  { batch: "50–100 чел.", days: "21–25 дней", model: "EOR-аутстаффинг", status: "Доступно" },
+                  { batch: "200–500 чел.", days: "25–35 дней", model: "EOR-аутстаффинг", status: "Доступно" },
+                  { batch: "500–1 000 чел.", days: "30–40 дней", model: "EOR + прямой контракт", status: "Доступно" },
+                  { batch: "1 000+ чел.", days: "35–45 дней", model: "Проектный EOR-аутстаффинг", status: "По запросу" },
+                ] as { batch: string; days: string; model: string; status: string }[]).map((row, i) => (
+                  <tr key={i} className={i % 2 === 0 ? "" : "bg-gray-50"}>
+                    <td className="py-2 px-3 font-semibold text-gray-900">{row.batch}</td>
+                    <td className="py-2 px-3 text-gray-700">{row.days}</td>
+                    <td className="py-2 px-3 text-gray-700">{row.model}</td>
+                    <td className="py-2 px-3">
+                      <span className="inline-block rounded px-2 py-0.5 text-xs font-bold" style={{ background: "var(--gold)", color: "#111" }}>{row.status}</span>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div>
+          <h2 className="text-2xl font-black text-gray-900">Поставка рабочей силы из Индии для нефтегаза</h2>
+          <p className="mt-3 text-gray-700 leading-relaxed">
+            Нефтегазовые месторождения Тюмени и ХМАО испытывают один из наибольших кадровых дефицитов в отрасли. Мы поставляем сварщиков 6G, слесарей и операторов тяжёлой техники для объектов на месторождениях в режиме вахты.
+            Подробнее: <a href="/uslugi/stroitelstvo/svarshchiki/tyumen" className="text-[color:var(--gold)] hover:brightness-125">сварщики в Тюмени</a>,
+            {" "}<a href="/uslugi/stroitelstvo/heavy-operators/surgut" className="text-[color:var(--gold)] hover:brightness-125">операторы в Сургуте</a>.
+          </p>
+        </div>
+      </div>
+
+      {/* Trust badges */}
+      <TrustBadges />
+
       {/* ── Programmatic pages navigation grid ── */}
       <div>
         <h2 className="mb-2 text-2xl font-black text-gray-900">Специальность × Город</h2>
@@ -157,7 +214,7 @@ export default function ConstructionServicePage() {
             <thead>
               <tr>
                 <th className="py-2 pr-4 text-left text-xs font-bold uppercase tracking-widest text-gray-400">Специальность</th>
-                {["Москва","Санкт-Петербург","Тюмень","Новосибирск","Владивосток"].map(city => (
+                {["Москва","Санкт-Петербург","Тюмень","Новосибирск","Владивосток","Екатеринбург","Сургут","Челябинск","Уфа","Казань"].map(city => (
                   <th key={city} className="px-3 py-2 text-center text-xs font-bold uppercase tracking-widest text-gray-400">{city}</th>
                 ))}
               </tr>
@@ -178,6 +235,11 @@ export default function ConstructionServicePage() {
                     { label: "ТЮМ",  slug: "tyumen" },
                     { label: "НСК",  slug: "novosibirsk" },
                     { label: "ВЛД",  slug: "vladivostok" },
+                    { label: "ЕКБ",  slug: "ekaterinburg" },
+                    { label: "СГТ",  slug: "surgut" },
+                    { label: "ЧЛБ",  slug: "chelyabinsk" },
+                    { label: "УФА",  slug: "ufa" },
+                    { label: "КЗН",  slug: "kazan" },
                   ] as { label: string; slug: string }[]).map(city => (
                     <td key={city.slug} className="px-3 py-2 text-center">
                       <a

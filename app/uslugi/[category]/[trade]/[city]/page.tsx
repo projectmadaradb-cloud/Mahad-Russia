@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import matrixData from "@/data/matrix.json";
 import { generatePageContent } from "@/src/utils/contentGenerator";
+import TrustBadges from "@/src/components/TrustBadges";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://mahadmanpowers.ru";
 
@@ -143,6 +144,9 @@ export default function TradeCityPage({ params }: PageProps) {
           </p>
         ))}
       </div>
+
+      {/* Trust badges */}
+      <TrustBadges />
 
       {/* Call to action */}
       <div className="rounded-2xl border-l-4 bg-gray-50 p-6" style={{ borderColor: "var(--gold)" }}>
